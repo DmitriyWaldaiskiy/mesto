@@ -2,5 +2,9 @@
   margin-left: 497px;
   margin-bottom: 518px;
   width: 32px;
+  transition: 0.3s;
+}
 
+.popup__close-icon:hover {
+  opacity: 0.6;
 }
