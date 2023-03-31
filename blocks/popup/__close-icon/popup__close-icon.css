@@ -1,0 +1,10 @@
+.popup__close-icon {
+  margin-left: 446px;
+  margin-bottom: 629px;
+  width: 32px;
+  transition: 0.3s;
+}
+
+.popup__close-icon:hover {
+  opacity: 0.6;
+}

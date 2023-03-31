@@ -21,20 +21,124 @@
       <section class="profile">
         <img class="profile__avatar" src="./images/Avatar.jpg" alt="Фото Жака" >
         <div class="profile__info">
+          <div class="profile__info-head"></div>
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <div class="profile__button">
-            <img
-              class="profile__button-image"
-              src="./images/Vector.png"
-              alt="Карандаш"
-            >
-          </div>
+          <button type="button" class="profile__button"></button>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <div class="profile__add-button"></div>
+
+        <button type="button" class="profile__add-button"></button>
+      </section>
+
+      <section class="elements">
+        <div class="element">
+          <img
+            class="element__images"
+            src="./images/Karach.png"
+            alt="Карачаевск"
+          >
+          <div class="element__container">
+            <h2 class="element__heading">Карачаевo-Черкеск</h2>
+            <div class="element__like"></div>
+          </div>
+        </div>
+
+        <div class="element">
+          <img
+            class="element__images"
+            src="./images/Karach.png"
+            alt="Карачаевск"
+          >
+          <div class="element__container">
+            <h2 class="element__heading">Карачаевск</h2>
+            <div class="element__like"></div>
+          </div>
+        </div>
+
+        <div class="element">
+          <img
+            class="element__images"
+            src="./images/Karach.png"
+            alt="Карачаевск"
+          >
+          <div class="element__container">
+            <h2 class="element__heading">Карачаевск</h2>
+            <div class="element__like"></div>
+          </div>
+        </div>
+
+        <div class="element">
+          <img
+            class="element__images"
+            src="./images/Karach.png"
+            alt="Карачаевск"
+          >
+          <div class="element__container">
+            <h2 class="element__heading">Карачаевск</h2>
+            <div class="element__like"></div>
+          </div>
+        </div>
+
+        <div class="element">
+          <img
+            class="element__images"
+            src="./images/Karach.png"
+            alt="Карачаевск"
+          >
+          <div class="element__container">
+            <h2 class="element__heading">Карачаевск</h2>
+            <div class="element__like"></div>
+          </div>
+        </div>
+
+        <div class="element">
+          <img
+            class="element__images"
+            src="./images/Karach.png"
+            alt="Карачаевск"
+          >
+          <div class="element__container">
+            <h2 class="element__heading">Карачаевск</h2>
+            <div class="element__like"></div>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <p class="footer__text">© 2020 Mesto Russia</p>
+    </footer>
+
+    <section class="popup" wfd-invisible="true">
+      <img
+        class="popup__close-icon"
+        src="./images/Close Icon.png"
+        alt="Закрывающая кнопка"
+      >
+      <div class="popup__content">
+        <h2 class="popup__head">Редактировать профиль</h2>
+        <form class="popup__form">
+          <input
+            name="name"
+            type="text"
+            value="Жак Ив Кусто"
+            placeholder="Имя"
+            class="popup__text popup__text_type_name"
+          >
+          <input
+            name="job"
+            type="text"
+            value="Исследователь океана"
+            placeholder="Род занятий"
+            class="popup__text popup__text_type_job"
+          >
+          <button type="submit" class="popup__button-submit">
+            <p class="popup__bottom-text">Сохранить</p>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <script src="./skripts/index.js"></script>
   </body>
 </html>

@@ -1,0 +1,12 @@
+.element__like {
+  width: 22px;
+  height: 19px;
+  background-image: url(../../../images/Vector_like.svg);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.element__like:hover {
+  opacity: 0.5;
+}
