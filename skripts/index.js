@@ -18,11 +18,9 @@ closeButton.addEventListener("click", () => {
 });
 
 editPopupForm.addEventListener("submit", (event) => {
-  evt.preventDefault();
-  const name = nameInput.value;
-  const job = jobInput.value;
+  event.preventDefault();
 
-  nameInput.textContent = name;
-  jobInput.textContent = job;
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
   changePopup.classList.remove("popup_open");
 });

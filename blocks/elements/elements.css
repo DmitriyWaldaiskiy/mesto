@@ -6,3 +6,20 @@
   column-gap: 17px;
   margin: 51px 17px 20px 0;
 }
+
+@media screen and (max-width: 1000px) {
+  .elements {
+    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 282px 1fr;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .elements {
+    grid-template-columns: 282px;
+    margin-top: 37px;
+    margin-left: 11px;
+  }
+}

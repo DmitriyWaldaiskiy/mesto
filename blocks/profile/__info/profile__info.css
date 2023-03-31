@@ -8,3 +8,13 @@
   align-items: flex-start;
   align-content: flex-start;
 }
+
+
+@media screen and (max-width: 930px) {
+  .profile__info {
+    width: 320px;
+    margin-left: 60px;
+    margin-top: 5px;
+    margin-right: 0;
+  }
+}

@@ -7,3 +7,14 @@
   color:
     rgba(255, 255, 255, 1);
 }
+
+@media screen and (max-width: 930px) {
+  .profile__subtitle {
+    margin-top: 6px;
+    margin-left: 13px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  }
+}
