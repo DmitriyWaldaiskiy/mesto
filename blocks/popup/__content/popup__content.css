@@ -1,5 +1,5 @@
 .popup__content {
-  position: absolute;
+  position: fixed;
   width: 430px;
   height: 330px;
   left: 425px;

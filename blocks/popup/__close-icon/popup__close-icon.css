@@ -1,6 +1,7 @@
 .popup__close-icon {
-  margin-left: 446px;
-  margin-bottom: 629px;
+  position: relative;
+  margin-left: 176px;
+  margin-bottom: 626px;
   width: 32px;
   transition: 0.3s;
 }
