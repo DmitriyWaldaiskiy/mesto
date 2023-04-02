@@ -1,11 +1,11 @@
 .profile__button {
   padding: 0;
   box-sizing: border-box;
-  margin-top: -34px;
-  margin-left: 312px;
+  margin-top: 37px;
+  margin-left: 17px;
   min-width: 24px;
-  min-height: 24px;
-  background: url(../../../images/Vector_op.png);
+  max-height: 24px;
+  background: url(../../../images/Vector2.svg);
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid rgba(255, 255, 255, 1);
