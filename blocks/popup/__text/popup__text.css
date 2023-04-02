@@ -1,6 +1,7 @@
 .popup__text {
   margin-left: 36px;
   max-width: 358px;
+  font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   padding-bottom: 10px;
@@ -8,4 +9,12 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 550px) {
+  .popup__text {
+    max-width: 238px;
+    margin-bottom: 28px;
+    margin-left: 19px;
+  }
 }

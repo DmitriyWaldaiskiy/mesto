@@ -6,3 +6,11 @@
   color:
     rgba(0, 0, 0, 1);
 }
+
+@media screen and (max-width: 550px) {
+  .popup__head {
+    margin: 25px 21px 73px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

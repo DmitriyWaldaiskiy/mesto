@@ -7,3 +7,10 @@
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
 }
+
+@media screen and (max-width: 550px) {
+  .popup__button-submit {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
