@@ -1,9 +1,7 @@
 .popup__content {
-  position: fixed;
+  position: relative;
   width: 430px;
   height: 330px;
-  left: 425px;
-  top: 195px;
   display: flex;
   flex-direction: column;
   background-color: rgb(255, 255, 255);

@@ -1,10 +1,9 @@
 .popup__close-icon {
-  position: fixed;
-  margin-left: 353px;
-  margin-bottom: 626px;
+  position: absolute;
+  margin-top: -40px;
+  margin-right: -40px;
   width: 32px;
   transition: 0.3s;
-
 }
 
 .popup__close-icon:hover {
