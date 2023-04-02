@@ -7,7 +7,7 @@
   margin: 51px 200px 20px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .elements {
     min-width: 90%;
     margin-left: auto;
