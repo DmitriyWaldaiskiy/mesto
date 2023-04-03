@@ -11,7 +11,7 @@
     <header class="header">
       <img
         class="header__logo"
-        src="./images/heder_logo.png"
+        src="./images/Vector_header.svg"
         alt="Логотип сайта"
       >
       <div class="header__line"></div>
@@ -23,7 +23,11 @@
         <div class="profile__info">
           <div class="profile__info-head">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button type="button" class="profile__button">
+            <button
+              type="button"
+              class="profile__button"
+              aria-label="Кнопка редактирования профиля"
+            >
               <img src="./images/button.png" alt="Карандаш" >
             </button>
           </div>
@@ -41,7 +45,7 @@
           >
           <div class="element__container">
             <h2 class="element__heading">Карачаевo-Черкеск</h2>
-            <div class="element__like"></div>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
 
@@ -53,7 +57,7 @@
           >
           <div class="element__container">
             <h2 class="element__heading">Карачаевск</h2>
-            <div class="element__like"></div>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
 
@@ -65,7 +69,7 @@
           >
           <div class="element__container">
             <h2 class="element__heading">Карачаевск</h2>
-            <div class="element__like"></div>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
 
@@ -77,7 +81,7 @@
           >
           <div class="element__container">
             <h2 class="element__heading">Карачаевск</h2>
-            <div class="element__like"></div>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
 
@@ -89,7 +93,7 @@
           >
           <div class="element__container">
             <h2 class="element__heading">Карачаевск</h2>
-            <div class="element__like"></div>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
 
@@ -101,7 +105,7 @@
           >
           <div class="element__container">
             <h2 class="element__heading">Карачаевск</h2>
-            <div class="element__like"></div>
+            <button type="button" class="element__like"></button>
           </div>
         </div>
       </section>
@@ -111,16 +115,12 @@
       <p class="footer__text">© 2020 Mesto Russia</p>
     </footer>
 
-    <section class="popup">
+    <div class="popup">
       <div class="popup__container">
-        <img
-          class="popup__close-icon"
-          src="./images/Close-Icon.png"
-          alt="Закрывающая кнопка"
-        >
+        <button type="button" class="popup__close-icon"></button>
         <div class="popup__content">
           <h2 class="popup__head">Редактировать профиль</h2>
-          <form class="popup__form">
+          <form name="profile-form" class="popup__form">
             <input
               name="name"
               type="text"
@@ -141,8 +141,8 @@
           </form>
         </div>
       </div>
-    </section>
+    </div>
 
-    <script src="./skripts/index.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

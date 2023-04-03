@@ -8,13 +8,13 @@ const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
 
 openButton.addEventListener("click", () => {
-  changePopup.classList.add("popup_open");
+  changePopup.classList.add("popup_opened");
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
 });
 
 closeButton.addEventListener("click", () => {
-  changePopup.classList.remove("popup_open");
+  changePopup.classList.remove("popup_opened");
 });
 
 editPopupForm.addEventListener("submit", (event) => {
@@ -22,5 +22,5 @@ editPopupForm.addEventListener("submit", (event) => {
 
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
-  changePopup.classList.remove("popup_open");
+  changePopup.classList.remove("popup_opened");
 });

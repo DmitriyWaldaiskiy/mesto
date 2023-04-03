@@ -1,6 +1,7 @@
 .popup__button-submit {
   margin-top: 18px;
   margin-left: 36px;
+  margin-bottom: 0;
   width: 358px;
   height: 50px;
   left: 461px;
@@ -13,6 +14,8 @@
   background:
     rgba(0, 0, 0, 1);
   border-radius: 2px;
+  border: 0;
+  cursor: pointer;
   transition: 0.3s;
 }
 

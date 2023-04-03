@@ -17,5 +17,6 @@
 @media screen and (max-width: 550px) {
   .page {
     margin: 0;
+    min-width: 90%;
   }
 }
