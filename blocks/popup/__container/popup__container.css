@@ -3,12 +3,4 @@
   flex-direction: column;
   position: relative;
   align-items: flex-end;
-  margin-left: 17px;
-  margin-bottom: 138px;
-}
-
-@media screen and (max-width: 550px) {
-  .popup__container {
-    margin-bottom: 148px;
-  }
 }
