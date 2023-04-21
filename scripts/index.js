@@ -142,11 +142,10 @@ addCardsForm.addEventListener("submit", handleAddCardsSubmit);
 
 //Popup Зум-картинки
 const imagePopupOpen = document.querySelector(".popup__image-zoom");
+const cardsElement = cardsTemplate.content.querySelector(".element");
 const cardsImage = cardsElement.querySelector(".element__images");
 
 const openButtonImagePopup = () => {
-  image.src = cardsData.link;
-  imageName.textContent = cardsData.name;
   openPopup(imagePopupOpen);
 };
 cardsImage.addEventListener("click", openButtonImagePopup);
