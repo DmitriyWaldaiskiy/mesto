@@ -111,6 +111,26 @@ const createCardsElement = (cardsData) => {
   deleteButton.addEventListener("click", handleDelete);
 
   likeButton.addEventListener("click", handleLike);
+
+  //Popup Зум-картинки
+  const imagePopupOpen = document.querySelector(".popup__image-zoom");
+  const imagePopupClose = document.querySelector(".close-image");
+  const ImageOpen = document.querySelector(".popup__image");
+  const imageCaption = document.querySelector(".popup__caption-image");
+
+  const openButtonImagePopup = () => {
+    ImageOpen.src = cardsData.link;
+    ImageOpen.alt = cardsData.name;
+    imageCaption.textContent = cardsData.name;
+    openPopup(imagePopupOpen);
+  };
+  cardsImage.addEventListener("click", openButtonImagePopup);
+  //close
+  const closeButtonImagePopup = () => {
+    closePopup(imagePopupOpen);
+  };
+  imagePopupClose.addEventListener("click", closeButtonImagePopup);
+
   return cardsElement;
 };
 
@@ -140,7 +160,7 @@ const handleAddCardsSubmit = (event) => {
 
 addCardsForm.addEventListener("submit", handleAddCardsSubmit);
 
-//Popup Зум-картинки
+/* //Popup Зум-картинки
 const imagePopupOpen = document.querySelector(".popup__image-zoom");
 const cardsElement = cardsTemplate.content.querySelector(".element");
 const cardsImage = cardsElement.querySelector(".element__images");
@@ -148,4 +168,4 @@ const cardsImage = cardsElement.querySelector(".element__images");
 const openButtonImagePopup = () => {
   openPopup(imagePopupOpen);
 };
-cardsImage.addEventListener("click", openButtonImagePopup);
+cardsImage.addEventListener("click", openButtonImagePopup); */

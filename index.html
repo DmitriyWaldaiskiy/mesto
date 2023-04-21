@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="Ru">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <link rel="stylesheet" href="./pages/index.css" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto</title>
   </head>
 
@@ -13,12 +13,16 @@
         class="header__logo"
         src="./images/Vector_header.svg"
         alt="Логотип сайта"
-      >
+      />
     </header>
 
     <main>
       <section class="profile">
-        <img class="profile__avatar" src="./images/Avatar.jpg" alt="Фото Жака" >
+        <img
+          class="profile__avatar"
+          src="./images/Avatar.jpg"
+          alt="Фото Жака"
+        />
         <div class="profile__info">
           <div class="profile__info-head">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -27,7 +31,7 @@
               class="profile__button"
               aria-label="Кнопка редактирования профиля"
             >
-              <img src="./images/button.png" alt="Карандаш" >
+              <img src="./images/button.png" alt="Карандаш" />
             </button>
           </div>
           <p class="profile__subtitle">Исследователь океана</p>
@@ -54,14 +58,14 @@
               value="Жак Ив Кусто"
               placeholder="Имя"
               class="popup__text popup__text_type_name"
-            >
+            />
             <input
               name="job"
               type="text"
               value="Исследователь океана"
               placeholder="Род занятий"
               class="popup__text popup__text_type_job"
-            >
+            />
             <button type="submit" class="popup__button-submit">
               Сохранить
             </button>
@@ -81,13 +85,13 @@
               type="text"
               placeholder="Название"
               class="popup__text popup__text_type_place"
-            >
+            />
             <input
               name="link"
               type="url"
               placeholder="Ссылка на картинку"
               class="popup__text popup__text_type_link"
-            >
+            />
             <button type="submit" class="popup__button-submit button-add">
               Сохранить
             </button>
@@ -98,9 +102,9 @@
 
     <div class="popup popup__image-zoom">
       <div class="popup__container">
-        <button type="button" class="popup__close-icon"></button>
+        <button type="button" class="popup__close-icon close-image"></button>
         <div class="popup__content-image">
-          <img class="popup__image" src="./images/Karach.png" alt="" >
+          <img class="popup__image" src="./images/Karach.png" alt="" />
           <p class="popup__caption-image">Подпись</p>
         </div>
       </div>
@@ -112,7 +116,7 @@
           class="element__images"
           src="./images/Karach.png"
           alt="Карачаевск"
-        >
+        />
         <div class="element__container">
           <h2 class="element__heading">Щаблон</h2>
           <button type="button" class="element__like"></button>
