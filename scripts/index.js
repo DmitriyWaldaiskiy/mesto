@@ -38,7 +38,7 @@ editProfileForm.addEventListener("submit", (event) => {
 
 //Popup добавления карточек
 const addButton = document.querySelector(".profile__add-button");
-const addPopupOpen = document.querySelector(".popup__add");
+const addPopupOpen = document.querySelector(".popup_add");
 const closeButtonAddCart = addPopupOpen.querySelector(".addclose");
 const editAddForm = addPopupOpen.querySelector(".addform");
 
@@ -82,7 +82,7 @@ const initialCards = [
 
 const cardsTemplate = document.getElementById("cards-template");
 const cardsContainer = document.querySelector(".elements");
-const addCardsPopup = document.querySelector(".popup__add");
+const addCardsPopup = document.querySelector(".popup_add");
 const addCardsBottom = document.querySelector(".button-add");
 const addCardsForm = document.querySelector(".addform");
 
@@ -113,7 +113,7 @@ const createCardsElement = (cardsData) => {
   likeButton.addEventListener("click", handleLike);
 
   //Popup Зум-картинки
-  const imagePopupOpen = document.querySelector(".popup__image-zoom");
+  const imagePopupOpen = document.querySelector(".popup_image-zoom");
   const imagePopupClose = document.querySelector(".close-image");
   const ImageOpen = document.querySelector(".popup__image");
   const imageCaption = document.querySelector(".popup__caption-image");
