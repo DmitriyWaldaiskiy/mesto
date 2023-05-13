@@ -4,8 +4,8 @@ const closeButtons = document.querySelectorAll(".popup__close-icon");
 const editProfileButton = document.querySelector(".profile__button");
 const profilePopup = document.querySelector(".popup_profile");
 const editProfileForm = profilePopup.querySelector(".popup__form");
-const nameInput = profilePopup.querySelector(".popup__text_type_name");
-const jobInput = profilePopup.querySelector(".popup__text_type_job");
+const nameInput = profilePopup.querySelector(".popup__input_type_name");
+const jobInput = profilePopup.querySelector(".popup__input_type_job");
 const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
 //Popup добавления карточек
@@ -19,8 +19,8 @@ const addCardsPopup = document.querySelector(".popup_add");
 const addCardsBottom = document.querySelector(".button-add");
 const addCardsForm = document.querySelector(".addform");
 
-const nameAddImput = addCardsForm.querySelector(".popup__text_type_place");
-const linkAddImput = addCardsForm.querySelector(".popup__text_type_link");
+const nameAddImput = addCardsForm.querySelector(".popup__input_type_place");
+const linkAddImput = addCardsForm.querySelector(".popup__input_type_link");
 //Popup Зум-картинки
 const imagePopupOpen = document.querySelector(".popup_image-zoom");
 const imageOpen = document.querySelector(".popup__image");
