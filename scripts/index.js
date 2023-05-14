@@ -72,6 +72,7 @@ const openProfilePopup = () => {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
   openPopup(profilePopup);
+  deactivateButton(openProfilePopup);
 };
 editProfileButton.addEventListener("click", openProfilePopup);
 
@@ -146,6 +147,7 @@ const handleAddCardsSubmit = (event) => {
   renderCardsElement(createCardsElement(initialCard));
   addCardsForm.reset();
   closePopup(addPopupOpen);
+  deactivateButton(handleAddCardsSubmit);
 };
 
 addCardsForm.addEventListener("submit", handleAddCardsSubmit);

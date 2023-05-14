@@ -7,10 +7,11 @@ const showError = (formElement, inputElement, errorMessage, config) => {
 };
 
 const hideError = (formElement, inputElement, config) => {
-  const errorElement = formElement.querySelector(`${inputElement.id}-error`);
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(config.inputErrorClass);
   errorElement.classList.remove(config.errorClass);
   errorElement.textContent = "";
+  console.log(errorElement);
 };
 
 const checkInputValidity = (formElement, inputElement, config) => {
@@ -77,10 +78,10 @@ const enableValidation = (config) => {
 };
 
 enableValidation({
-  formSelector: "popup__form",
+  formSelector: ".popup__form",
   inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
+  submitButtonSelector: ".popup__button-submit",
   inactiveButtonClass: "popup__button-submit_off",
   inputErrorClass: "popup__input_invalid",
-  errorClass: "popup__error_activate",
+  errorClass: "popup__input-error",
 });
