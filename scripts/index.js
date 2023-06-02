@@ -1,3 +1,7 @@
+import { initialCards } from "./initialcards.js";
+import { Card } from "./card.js";
+import { enableValidation } from "./validate.js";
+
 // находим все крестики проекта по универсальному селектору
 const closeButtons = document.querySelectorAll(".popup__close-icon");
 // popup редактирования профиля
@@ -89,65 +93,33 @@ const openButtonAddPopup = () => {
 };
 addButton.addEventListener("click", openButtonAddPopup);
 
-const createCardsElement = (cardsData) => {
-  const cardsElement = cardsTemplate.content
-    .querySelector(".element")
-    .cloneNode(true);
-  const cardsName = cardsElement.querySelector(".element__heading");
-  const cardsImage = cardsElement.querySelector(".element__images");
-
-  cardsName.textContent = cardsData.name;
-  cardsImage.src = cardsData.link;
-  cardsImage.alt = cardsData.name;
-
-  const deleteButton = cardsElement.querySelector(".element__button-delete");
-  const likeButton = cardsElement.querySelector(".element__like");
-
-  const handleDelete = () => {
-    cardsElement.remove();
-  };
-
-  const handleLike = () => {
-    likeButton.classList.toggle("element__like_active");
-  };
-
-  deleteButton.addEventListener("click", handleDelete);
-  likeButton.addEventListener("click", handleLike);
-
-  //Popup Зум-картинки
-  const openImagePopup = () => {
-    imageOpen.src = cardsData.link;
-    imageOpen.alt = cardsData.name;
-    imageCaption.textContent = cardsData.name;
-    openPopup(imagePopupOpen);
-  };
-  cardsImage.addEventListener("click", openImagePopup);
-
-  return cardsElement;
+const renderCardsElement = (cardsData) => {
+  const card = new Card(cardsData, openImage);
+  const cards = card.createCardsElement();
+  return cards;
 };
 
-const renderCardsElement = (cardsElement) => {
-  cardsContainer.prepend(cardsElement);
+const openImage = (cardsData) => {
+  imageOpen.src = cardsData.link;
+  imageOpen.alt = cardsData.name;
+  imageCaption.textContent = cardsData.name;
+  openPopup(imagePopupOpen);
 };
-
-initialCards.forEach((cards) => {
-  renderCardsElement(createCardsElement(cards));
-});
 
 const handleAddCardsSubmit = (event) => {
   event.preventDefault();
-
-  const name = nameAddImput.value;
-  const link = linkAddImput.value;
-
-  const initialCard = {
-    name,
-    link,
+  const cardsAdd = {
+    name: nameAddImput.value,
+    link: linkAddImput.value,
   };
-  renderCardsElement(createCardsElement(initialCard));
+
+  cardsContainer.prepend(renderCardsElement(cardsAdd));
   addCardsForm.reset();
   closePopup(addPopupOpen);
   deactivateButton(handleAddCardsSubmit);
-};
 
+  initialCards.forEach((element) => {
+    cardsContainer.append(renderCardsElement(element));
+  });
+};
 addCardsForm.addEventListener("submit", handleAddCardsSubmit);
