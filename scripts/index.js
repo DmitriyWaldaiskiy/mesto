@@ -1,6 +1,6 @@
 import { initialCards } from "./initialcards.js";
 import { Card } from "./card.js";
-import { enableValidation } from "./validate.js";
+import { FormValidator } from "./FormValidator.js";
 
 // находим все крестики проекта по универсальному селектору
 const closeButtons = document.querySelectorAll(".popup__close-icon");
@@ -17,7 +17,6 @@ const addButton = document.querySelector(".profile__add-button");
 const addPopupOpen = document.querySelector(".popup_add");
 const editAddForm = addPopupOpen.querySelector(".addform");
 // Добавление клона карточки
-const cardsTemplate = document.getElementById("cards-template");
 const cardsContainer = document.querySelector(".elements");
 const addCardsPopup = document.querySelector(".popup_add");
 const addCardsBottom = document.querySelector(".button-add");
@@ -29,6 +28,15 @@ const linkAddImput = addCardsForm.querySelector(".popup__input_type_link");
 const imagePopupOpen = document.querySelector(".popup_image-zoom");
 const imageOpen = document.querySelector(".popup__image");
 const imageCaption = document.querySelector(".popup__caption-image");
+
+const enableValidation = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button-submit",
+  inactiveButtonClass: "popup__button-submit_off",
+  inputErrorClass: "popup__input_invalid",
+  errorClass: "popup__input-error",
+};
 
 // Открытие и закрытие попапов
 const openPopup = (popup) => {
@@ -58,6 +66,7 @@ function handleOverlay(evt, popup) {
 profilePopup.addEventListener("mousedown", (evt) =>
   handleOverlay(evt, profilePopup)
 );
+
 addCardsPopup.addEventListener("mousedown", (evt) =>
   handleOverlay(evt, addCardsPopup)
 );
@@ -93,18 +102,22 @@ const openButtonAddPopup = () => {
 };
 addButton.addEventListener("click", openButtonAddPopup);
 
-const renderCardsElement = (cardsData) => {
-  const card = new Card(cardsData, openImage);
-  const cards = card.createCardsElement();
+const openImage = (cardData) => {
+  imageOpen.src = cardData.link;
+  imageOpen.alt = cardData.name;
+  imageCaption.textContent = cardData.name;
+  openImage(imagePopupOpen);
+};
+
+const renderCardElement = (cardData) => {
+  const card = new Card(cardData);
+  const cards = card.createCardElement();
   return cards;
 };
 
-const openImage = (cardsData) => {
-  imageOpen.src = cardsData.link;
-  imageOpen.alt = cardsData.name;
-  imageCaption.textContent = cardsData.name;
-  openPopup(imagePopupOpen);
-};
+initialCards.forEach((element, openImage) => {
+  cardsContainer.prepend(renderCardElement(element));
+});
 
 const handleAddCardsSubmit = (event) => {
   event.preventDefault();
@@ -113,13 +126,15 @@ const handleAddCardsSubmit = (event) => {
     link: linkAddImput.value,
   };
 
-  cardsContainer.prepend(renderCardsElement(cardsAdd));
+  cardsContainer.prepend(renderCardElement(cardsAdd));
   addCardsForm.reset();
   closePopup(addPopupOpen);
   deactivateButton(handleAddCardsSubmit);
-
-  initialCards.forEach((element) => {
-    cardsContainer.append(renderCardsElement(element));
-  });
 };
 addCardsForm.addEventListener("submit", handleAddCardsSubmit);
+
+const profileValidator = new FormValidator(enableValidation, editProfileForm);
+profileValidator.enableValidation();
+
+const addValidator = new FormValidator(enableValidation, editAddForm);
+addValidator.enableValidation();

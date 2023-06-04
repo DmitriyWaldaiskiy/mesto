@@ -1,18 +1,18 @@
 class Card {
-  constructor(cardsData, openImage) {
-    this._cardsData = cardsData;
-    this._name = cardsData.name;
-    this._link = cardsData.link;
+  constructor(cardData, openImage) {
+    this._cardData = cardData;
+    this._name = cardData.name;
+    this._link = cardData.link;
     this._openImage = openImage;
 
-    this._cardsElement = document
-      .getElementById("cards-template")
+    this._cardElement = document
+      .querySelector(".cards-template")
       .content.querySelector(".element")
       .cloneNode(true);
   }
 
   _handleDelete = () => {
-    this._cardsElement.remove();
+    this._cardElement.remove();
   };
 
   _handleLike = () => {
@@ -20,28 +20,28 @@ class Card {
   };
 
   _openImage = () => {
-    this._openImage(this._cardsData);
+    this._openImage(this._cardData);
   };
 
   _setEventListener = () => {
     this._deleteButton.addEventListener("click", this._handleDelete);
     this._likeButton.addEventListener("click", this._handleLike);
-    this._cardsImage.addEventListener("click", this._openImage);
+    this._cardImage.addEventListener("click", this._openImage);
   };
 
-  createCardsElement = () => {
-    this._cardsImage = this._cardsElement.querySelector(".element__images");
-    this._cardsName = this._cardsElement.querySelector(".element__heading");
-    this._deleteButton = this._cardsElement.querySelector(
+  createCardElement = () => {
+    this._cardImage = this._cardElement.querySelector(".element__images");
+    this._cardName = this._cardElement.querySelector(".element__heading");
+    this._deleteButton = this._cardElement.querySelector(
       ".element__button-delete"
     );
-    this._likeButton = this._cardsElement.querySelector(".element__like");
+    this._likeButton = this._cardElement.querySelector(".element__like");
 
-    this._cardsImage.src = this._link;
-    this._cardsImage.alt = this._name;
-    this._cardsName.textContent = this._name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+    this._cardName.textContent = this._name;
     this._setEventListener();
-    return this._cardsElement;
+    return this._cardElement;
   };
 }
 
