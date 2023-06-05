@@ -1,12 +1,12 @@
 class FormValidator {
-  constructor(enableValidation, form) {
+  constructor(validationConfig, form) {
     this._form = form;
-    this._formSelector = enableValidation.formSelector;
-    this._inputSelector = enableValidation.inputSelector; //: ".popup__input",
-    this._submitButtonSelector = enableValidation.submitButtonSelector; //: ".popup__button-submit",
-    this._inactiveButtonClass = enableValidation.inactiveButtonClass; //: "popup__button-submit_off",
-    this._inputErrorClass = enableValidation.inputErrorClass; //: "popup__input_invalid",
-    this._errorClass = enableValidation.errorClass; //: "popup__input-error",
+    this._formSelector = validationConfig.formSelector;
+    this._inputSelector = validationConfig.inputSelector; //: ".popup__input",
+    this._submitButtonSelector = validationConfig.submitButtonSelector; //: ".popup__button-submit",
+    this._inactiveButtonClass = validationConfig.inactiveButtonClass; //: "popup__button-submit_off",
+    this._inputErrorClass = validationConfig.inputErrorClass; //: "popup__input_invalid",
+    this._errorClass = validationConfig.errorClass; //: "popup__input-error",
     this._formList = this._formSelector;
     this._buttonElement = this._form.querySelector(this._submitButtonSelector);
   }
@@ -16,7 +16,8 @@ class FormValidator {
     inputElement.classList.add(this._inputErrorClass);
     this._errorElement.textContent = inputElement.validationMessage;
     this._errorElement.classList.add(this._errorClass);
-    console.log(errorElement);
+    return errorElement();
+    // console.log(errorElement);
   };
 
   _hideError = (inputElement) => {
@@ -24,7 +25,8 @@ class FormValidator {
     inputElement.classList.remove(this._inputErrorClass);
     this._errorElement.classList.remove(config.errorClass);
     this._errorElement.textContent = "";
-    console.log(errorElement);
+    return errorElement();
+    // console.log(errorElement);
   };
 
   _checkInputValidity = (inputElement) => {
