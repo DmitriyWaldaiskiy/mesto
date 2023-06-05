@@ -1,12 +1,10 @@
 class Card {
   constructor(cardData, openImage) {
     this._cardData = cardData;
-    this._name = cardData.name;
-    this._link = cardData.link;
     this._openImage = openImage;
 
     this._cardElement = document
-      .querySelector(".cards-template")
+      .querySelector(this._templateSelector)
       .content.querySelector(".element")
       .cloneNode(true);
   }

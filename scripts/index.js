@@ -29,7 +29,7 @@ const imagePopupOpen = document.querySelector(".popup_image-zoom");
 const imageOpen = document.querySelector(".popup__image");
 const imageCaption = document.querySelector(".popup__caption-image");
 
-const enableValidation = {
+const validationConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button-submit",
@@ -133,8 +133,8 @@ const handleAddCardsSubmit = (event) => {
 };
 addCardsForm.addEventListener("submit", handleAddCardsSubmit);
 
-const profileValidator = new FormValidator(enableValidation, editProfileForm);
-profileValidator.enableValidation();
+const profileValidator = new FormValidator(validationConfig, editProfileForm);
+profileValidator.validationConfig();
 
-const addValidator = new FormValidator(enableValidation, editAddForm);
-addValidator.enableValidation();
+const addValidator = new FormValidator(validationConfig, editAddForm);
+addValidator.validationConfig();
