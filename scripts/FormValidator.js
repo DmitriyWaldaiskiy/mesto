@@ -7,7 +7,6 @@ class FormValidator {
     this._inactiveButtonClass = validationConfig.inactiveButtonClass; //: "popup__button-submit_off",
     this._inputErrorClass = validationConfig.inputErrorClass; //: "popup__input_invalid",
     this._errorClass = validationConfig.errorClass; //: "popup__input-error",
-    this._formList = this._formSelector;
     this._buttonElement = this._form.querySelector(this._submitButtonSelector);
   }
 
@@ -72,13 +71,10 @@ class FormValidator {
   };
 
   enableValidation = () => {
-    this._formList = this._formSelector;
-    this._formList.forEach((form) => {
-      form.addEventListener("submit", (evt) => {
-        evt.preventDefault();
-      });
-      this._setEventListeners();
+    form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
     });
+    this._setEventListeners();
   };
 }
 

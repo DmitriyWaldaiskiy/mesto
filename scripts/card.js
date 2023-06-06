@@ -1,12 +1,9 @@
 class Card {
-  constructor(cardData, openImage) {
+  constructor(cardData, templateSelector, openImage) {
     this._cardData = cardData;
-    this._name = cardData.name;
-    this._link = cardData.link;
     this._openImage = openImage;
-
     this._cardElement = document
-      .querySelector(".cards-template")
+      .querySelector(templateSelector)
       .content.querySelector(".element")
       .cloneNode(true);
   }
@@ -19,14 +16,14 @@ class Card {
     this._likeButton.classList.toggle("element__like_active");
   };
 
-  _openImage = () => {
+  _onOpenImage = () => {
     this._openImage(this._cardData);
   };
 
   _setEventListener = () => {
     this._deleteButton.addEventListener("click", this._handleDelete);
     this._likeButton.addEventListener("click", this._handleLike);
-    this._cardImage.addEventListener("click", this._openImage);
+    this._cardImage.addEventListener("click", this._onOpenImage);
   };
 
   createCardElement = () => {
@@ -37,9 +34,9 @@ class Card {
     );
     this._likeButton = this._cardElement.querySelector(".element__like");
 
-    this._cardImage.src = this._link;
-    this._cardImage.alt = this._name;
-    this._cardName.textContent = this._name;
+    this._cardImage.src = this._cardData.link;
+    this._cardImage.alt = this._cardData.name;
+    this._cardName.textContent = this._cardData.name;
     this._setEventListener();
     return this._cardElement;
   };

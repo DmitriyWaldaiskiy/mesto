@@ -106,11 +106,11 @@ const openImage = (cardData) => {
   imageOpen.src = cardData.link;
   imageOpen.alt = cardData.name;
   imageCaption.textContent = cardData.name;
-  openImage(imagePopupOpen);
+  openPopup(imagePopupOpen);
 };
 
 const renderCardElement = (cardData) => {
-  const card = new Card(cardData);
+  const card = new Card(cardData, ".cards-template", openImage);
   const cards = card.createCardElement();
   return cards;
 };
