@@ -72,14 +72,11 @@ class FormValidator {
     });
   };
 
-  _enableValidation = () => {
-    this._form.forEach((form) => {
-      form.addEventListener("submit", (evt) => {
-        evt.preventDefault();
-      });
-
-      this._setEventListeners();
+  enableValidation = () => {
+    form.addEventListener("submit", (evt) => {
+      evt.preventDefault();
     });
+    this._setEventListeners();
   };
 }
 
