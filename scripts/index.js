@@ -134,7 +134,7 @@ const handleAddCardsSubmit = (event) => {
 addCardsForm.addEventListener("submit", handleAddCardsSubmit);
 
 const profileValidator = new FormValidator(validationConfig, editProfileForm);
-profileValidator.enableValidation();
+profileValidator._enableValidation();
 
 const addValidator = new FormValidator(validationConfig, editAddForm);
-addValidator.enableValidation();
+addValidator._enableValidation();

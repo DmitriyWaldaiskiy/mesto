@@ -7,7 +7,11 @@ class FormValidator {
     this._inactiveButtonClass = validationConfig.inactiveButtonClass; //: "popup__button-submit_off",
     this._inputErrorClass = validationConfig.inputErrorClass; //: "popup__input_invalid",
     this._errorClass = validationConfig.errorClass; //: "popup__input-error",
+    this._inputList = Array.from(
+      this._form.querySelectorAll(this._inputSelector)
+    );
     this._buttonElement = this._form.querySelector(this._submitButtonSelector);
+    console.log(this._inputList);
   }
 
   _showError = (inputElement) => {
@@ -15,7 +19,6 @@ class FormValidator {
     inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = inputElement.validationMessage;
     errorElement.classList.add(this._errorClass);
-    // console.log(errorElement);
   };
 
   _hideError = (inputElement) => {
@@ -23,7 +26,6 @@ class FormValidator {
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.classList.remove(config.errorClass);
     errorElement.textContent = "";
-    // console.log(errorElement);
   };
 
   _checkInputValidity = (inputElement) => {
@@ -70,11 +72,14 @@ class FormValidator {
     });
   };
 
-  enableValidation = () => {
-    form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
+  _enableValidation = () => {
+    this._form.forEach((form) => {
+      form.addEventListener("submit", (evt) => {
+        evt.preventDefault();
+      });
+
+      this._setEventListeners();
     });
-    this._setEventListeners();
   };
 }
 
