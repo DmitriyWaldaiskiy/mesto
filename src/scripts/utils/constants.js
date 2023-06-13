@@ -1,4 +1,3 @@
-// Добавление клона карточки
 const initialCards = [
   {
     name: "Звездное небо",
@@ -26,4 +25,31 @@ const initialCards = [
   },
 ];
 
-export { initialCards };
+const openProfileButton = document.querySelector(".profile__button");
+const submitProfileForm = forms["profile-form"];
+const openAddButton = document.querySelector(".button-add");
+const submitAddForm = forms["add-form"];
+
+const validationConfig = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button-submit",
+  inactiveButtonClass: "popup__button-submit_off",
+  inputErrorClass: "popup__input_invalid",
+  errorClass: "popup__input-error",
+};
+
+const configProfileInfo = {
+  profileNameItem: ".profile__title",
+  profileJobItem: ".profile__subtitle",
+};
+
+export {
+  initialCards,
+  openProfileButton,
+  submitProfileForm,
+  submitAddForm,
+  openAddButton,
+  validationConfig,
+  configProfileInfo,
+};

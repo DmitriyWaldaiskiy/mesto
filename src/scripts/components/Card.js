@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
   constructor(cardData, templateSelector, openImage) {
     this._cardData = cardData;
     this._openImage = openImage;
@@ -41,5 +41,3 @@ class Card {
     return this._cardElement;
   };
 }
-
-export { Card };

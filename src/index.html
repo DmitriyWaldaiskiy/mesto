@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto</title>
   </head>
 
@@ -11,7 +10,7 @@
     <header class="header">
       <img
         class="header__logo"
-        src="./images/Vector_header.svg"
+        src="../src/images/Vector_header.svg"
         alt="Логотип сайта"
       />
     </header>
@@ -20,7 +19,7 @@
       <section class="profile">
         <img
           class="profile__avatar"
-          src="./images/Avatar.jpg"
+          src="../src/images/Avatar.jpg"
           alt="Фото Жака"
         />
         <div class="profile__info">
@@ -31,7 +30,7 @@
               class="profile__button"
               aria-label="Кнопка редактирования профиля"
             >
-              <img src="./images/button.png" alt="Карандаш" />
+              <img src="../src/images/button.png" alt="Карандаш" />
             </button>
           </div>
           <p class="profile__subtitle">Исследователь океана</p>
@@ -93,7 +92,7 @@
         <button type="button" class="popup__close-icon addclose"></button>
         <div class="popup__content">
           <h2 class="popup__head">Новое место</h2>
-          <form name="profile-form" class="popup__form addform" novalidate>
+          <form name="add-form" class="popup__form addform" novalidate>
             <label class="popup__input-element">
               <input
                 id="place"
@@ -130,7 +129,11 @@
       <div class="popup__container">
         <button type="button" class="popup__close-icon close-image"></button>
         <div class="popup__content-image">
-          <img class="popup__image" src="./images/Karach.png" alt="Шаблон" />
+          <img
+            class="popup__image"
+            src="../src/images/Karach.png"
+            alt="Шаблон"
+          />
           <p class="popup__caption-image">Подпись</p>
         </div>
       </div>
@@ -141,7 +144,7 @@
         <button class="element__button-delete" type="button"></button>
         <img
           class="element__images"
-          src="./images/Karach.png"
+          src="../src/images/Karach.png"
           alt="Карачаевск"
         />
         <div class="element__container">
@@ -151,6 +154,6 @@
       </div>
     </template>
 
-    <script src="./scripts/index.js" type="module"></script>
+    <!-- <script src="./scripts/index.js" type="module"></script> -->
   </body>
 </html>

@@ -1,3 +1,37 @@
 {
-  "liveServer.settings.port": 5501
+  "workbench.iconTheme": "vscode-icons",
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": false,
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.tabSize": 2,
+  "files.defaultLanguage": "html",
+  "editor.detectIndentation": false,
+  "editor.folding": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.linkedEditing": true,
+  "ecsstractor_port.add_comment": false,
+  "ecsstractor_port.empty_line_before_nested_selector": false,
+  "liveServer.settings.donotVerifyTags": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "liveServer.settings.port": 5501,
+  "editor.guides.bracketPairs": true,
+  "prettier.printWidth": 250,
+  "prettier.bracketSameLine": true,
+  "prettier.singleQuote": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.proseWrap": "always",
+  "prettier.jsxSingleQuote": true,
+  "editor.accessibilitySupport": "on"
 }
