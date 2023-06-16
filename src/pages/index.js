@@ -26,7 +26,7 @@ const section = new Section(
       return card.createCardElement();
     },
   },
-  ".elements"
+  "elements"
 );
 section.addCard();
 

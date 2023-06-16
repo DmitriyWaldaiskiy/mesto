@@ -26,9 +26,9 @@ const initialCards = [
 ];
 
 const openProfileButton = document.querySelector(".profile__button");
-const submitProfileForm = forms["profile-form"];
+const submitProfileForm = document.querySelector(".profile-form");
 const openAddButton = document.querySelector(".button-add");
-const submitAddForm = forms["add-form"];
+const submitAddForm = document.querySelector(".add-form");
 
 const validationConfig = {
   formSelector: ".popup__form",

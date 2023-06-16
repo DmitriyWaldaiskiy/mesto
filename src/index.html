@@ -10,7 +10,7 @@
     <header class="header">
       <img
         class="header__logo"
-        src="../src/images/Vector_header.svg"
+        src="<%=require('./images/Vector_header.svg')%>"
         alt="Логотип сайта"
       />
     </header>
@@ -19,7 +19,7 @@
       <section class="profile">
         <img
           class="profile__avatar"
-          src="../src/images/Avatar.jpg"
+          src="<%=require('./images/Avatar.jpg')%>"
           alt="Фото Жака"
         />
         <div class="profile__info">
@@ -30,7 +30,7 @@
               class="profile__button"
               aria-label="Кнопка редактирования профиля"
             >
-              <img src="../src/images/button.png" alt="Карандаш" />
+              <img src="<%=require('./images/button.png')%>" alt="Карандаш" />
             </button>
           </div>
           <p class="profile__subtitle">Исследователь океана</p>
@@ -50,7 +50,7 @@
         <button type="button" class="popup__close-icon"></button>
         <div class="popup__content">
           <h2 class="popup__head">Редактировать профиль</h2>
-          <form name="profile-form" class="popup__form" novalidate>
+          <form name="profile-form" class="popup__form profile-form" novalidate>
             <label class="popup__input-element">
               <input
                 id="name"

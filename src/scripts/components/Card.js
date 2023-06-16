@@ -4,7 +4,7 @@ export default class Card {
     this._openImage = openImage;
     this._cardElement = document
       .querySelector(templateSelector)
-      .content.querySelector(".element")
+      .content.querySelector("cards-template")
       .cloneNode(true);
   }
 

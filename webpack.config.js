@@ -50,6 +50,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html", // путь к файлу index.html
+      filename: "index.html",
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(), // подключение плагина для объединения файлов css
