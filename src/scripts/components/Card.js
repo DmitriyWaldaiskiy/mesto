@@ -1,10 +1,10 @@
 export default class Card {
-  constructor(cardData, templateSelector, openImage) {
+  constructor(cardData, templateSelector, popupImage) {
     this._cardData = cardData;
-    this._openImage = openImage;
+    this._openImage = popupImage;
     this._cardElement = document
       .querySelector(templateSelector)
-      .content.querySelector("cards-template")
+      .content.querySelector(".element")
       .cloneNode(true);
   }
 
@@ -35,8 +35,8 @@ export default class Card {
     this._likeButton = this._cardElement.querySelector(".element__like");
 
     this._cardImage.src = this._cardData.link;
-    this._cardImage.alt = this._cardData.name;
-    this._cardName.textContent = this._cardData.name;
+    this._cardImage.alt = this._cardData.place;
+    this._cardName.textContent = this._cardData.place;
     this._setEventListener();
     return this._cardElement;
   };

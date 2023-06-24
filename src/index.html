@@ -8,11 +8,8 @@
 
   <body class="page">
     <header class="header">
-      <img
-        class="header__logo"
-        src="<%=require('./images/Vector_header.svg')%>"
-        alt="Логотип сайта"
-      />
+      <img class="header__logo"
+      src="<%=require('./images/Vector_header.svg')%>"" alt="Логотип сайта" />
     </header>
 
     <main>
@@ -50,20 +47,20 @@
         <button type="button" class="popup__close-icon"></button>
         <div class="popup__content">
           <h2 class="popup__head">Редактировать профиль</h2>
-          <form name="profile-form" class="popup__form profile-form" novalidate>
+          <form name="profile-form" class="popup__form profileForm" novalidate>
             <label class="popup__input-element">
               <input
-                id="name"
-                name="name"
+                id="username"
+                name="username"
                 type="text"
                 value="Жак Ив Кусто"
                 placeholder="Имя"
-                class="popup__input popup__input_type_name"
+                class="popup__input popup__input_type_username"
                 required
                 minlength="2"
                 maxlength="40"
               />
-              <span class="name-error"></span>
+              <span class="username-error"></span>
             </label>
             <label class="popup__input-element">
               <input
@@ -92,7 +89,7 @@
         <button type="button" class="popup__close-icon addclose"></button>
         <div class="popup__content">
           <h2 class="popup__head">Новое место</h2>
-          <form name="add-form" class="popup__form addform" novalidate>
+          <form name="profile-form" class="popup__form addform" novalidate>
             <label class="popup__input-element">
               <input
                 id="place"
@@ -129,11 +126,7 @@
       <div class="popup__container">
         <button type="button" class="popup__close-icon close-image"></button>
         <div class="popup__content-image">
-          <img
-            class="popup__image"
-            src="../src/images/Karach.png"
-            alt="Шаблон"
-          />
+          <img class="popup__image" src="#" alt="Шаблон" />
           <p class="popup__caption-image">Подпись</p>
         </div>
       </div>
@@ -144,7 +137,7 @@
         <button class="element__button-delete" type="button"></button>
         <img
           class="element__images"
-          src="../src/images/Karach.png"
+          src="./images/Karach.png"
           alt="Карачаевск"
         />
         <div class="element__container">
@@ -153,7 +146,5 @@
         </div>
       </div>
     </template>
-
-    <!-- <script src="./scripts/index.js" type="module"></script> -->
   </body>
 </html>
