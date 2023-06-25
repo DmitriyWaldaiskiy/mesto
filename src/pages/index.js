@@ -36,10 +36,8 @@ const section = new Section(
 );
 
 // popup редактирования профиля
-const popupProfile = new PopupWithForm(profilePopupSelector, (evt) => {
-  evt.preventDefault();
-  userInfo.setUserInfo(popupProfile.getInputsValue());
-  popupProfile.close();
+const popupProfile = new PopupWithForm(profilePopupSelector, (data) => {
+  userInfo.setUserInfo(data);
 });
 
 //submit
