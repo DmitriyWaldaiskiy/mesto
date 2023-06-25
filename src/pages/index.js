@@ -22,13 +22,13 @@ import PopupWithForm from "../scripts/components/PopupWithForm.js";
 
 const userInfo = new UserInfo(configInfo);
 
-const popupImage = new PopupWithImage(imagePopupSelector);
+const openImagePopup = new PopupWithImage(imagePopupSelector);
 
 const section = new Section(
   {
     items: initialCards,
     renderer: (cardData) => {
-      const card = new Card(cardData, ".cards-template", popupImage.open);
+      const card = new Card(cardData, ".cards-template", openImagePopup.open);
       return card.createCardElement();
     },
   },
@@ -38,7 +38,7 @@ const section = new Section(
 // popup редактирования профиля
 const popupProfile = new PopupWithForm(profilePopupSelector, (evt) => {
   evt.preventDefault();
-  userInfo.setUserInfo(popupProfile);
+  userInfo.setUserInfo(popupProfile.getInputsValue());
   popupProfile.close();
 });
 
@@ -48,21 +48,19 @@ editProfileButton.addEventListener("click", () => {
   popupProfile.open();
 });
 
-// popup добавление карточек
-
-const popupAddcards = new PopupWithForm(addCardsSelector, (evt) => {
-  evt.preventDefault();
-  section.addItem(section.renderer(popupAddcards.getInputsValue()));
-  popupAddcards.close();
+//submit добавление карточек
+const popupAddcards = new PopupWithForm(addCardsSelector, (data) => {
+  section.addItem(data);
 });
 
-//submit
+// popup добавление карточек
 addButton.addEventListener("click", () => {
+  addValidator.resetError();
   popupAddcards.open();
 });
 
 popupProfile.setEventListeners();
-popupImage.setEventListeners();
+openImagePopup.setEventListeners();
 popupAddcards.setEventListeners();
 section.addCards();
 

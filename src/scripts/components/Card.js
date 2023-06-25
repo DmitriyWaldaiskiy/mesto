@@ -1,7 +1,7 @@
 export default class Card {
-  constructor(cardData, templateSelector, popupImage) {
+  constructor(cardData, templateSelector, openImagePopup) {
     this._cardData = cardData;
-    this._openImage = popupImage;
+    this._openImage = openImagePopup;
     this._cardElement = document
       .querySelector(templateSelector)
       .content.querySelector(".element")

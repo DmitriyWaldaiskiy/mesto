@@ -78,13 +78,6 @@ export default class FormValidator {
   };
 
   resetError = () => {
-    this._inputList.forEach((input) => {
-      this._hideInputError(input);
-      if (input.validity.valid) {
-        this._activateButton();
-      } else {
-        this._deactivateButton();
-      }
-    });
+    this._deactivateButton();
   };
 }
