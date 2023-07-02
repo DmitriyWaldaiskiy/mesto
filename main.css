@@ -41,5 +41,5 @@
 .popup__button-submit_off{background:#000;border:0;border-radius:2px;color:#fff;cursor:default;font-size:18px;font-weight:400;height:50px;left:461px;line-height:22px;margin-bottom:0;margin-left:36px;margin-top:18px;opacity:.2;text-align:center;top:438px;width:358px}.popup__button-submit_off:hover{opacity:0}
 .popup__input_invalid{border-bottom:1px solid red}
 .popup__input-element{display:flex;flex-direction:column;margin-bottom:5px}
-.popup__title_delete{margin-bottom:36px}
+.popup__title-delete{margin-bottom:36px}
 
