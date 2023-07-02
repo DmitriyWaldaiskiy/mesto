@@ -18,4 +18,12 @@ export default class UserInfo {
     this._profileJob.textContent = job;
     this._profileAvatar.src = avatar;
   }
+
+  getId() {
+    return this._id;
+  }
+
+  setId(id) {
+    this._id = id;
+  }
 }

@@ -50,7 +50,7 @@ export default class Card {
     this._cardImage.addEventListener("click", this._onOpenImage);
   };
 
-  _visibleTrachButton() {
+  _setTrashButtonVisible() {
     this._myId === this._ownerId
       ? (this._deleteButton.style.display = "block")
       : (this._deleteButton.style.display = "none");
@@ -66,12 +66,12 @@ export default class Card {
     this._counter.textContent = this._likesLength;
   }
 
-  likesToggle(likes) {
+  toggleLikes(likes) {
     this._likeButton.classList.toggle("element__like_active");
     this._counter.textContent = likes.length;
   }
 
-  removeCards() {
+  removeCard() {
     this._cardElement.remove();
   }
 
@@ -80,7 +80,7 @@ export default class Card {
     this._cardImage.alt = this._name;
     this._cardName.textContent = this._name;
     this._checkStatusLike();
-    this._visibleTrachButton();
+    this._setTrashButtonVisible();
     this._setEventListener();
     return this._cardElement;
   }

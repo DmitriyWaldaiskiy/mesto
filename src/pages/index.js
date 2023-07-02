@@ -45,14 +45,14 @@ const deleteCardPopup = new PopupDeleteCard(
     api
       .deleteCard(cardId)
       .then(() => {
-        card.removeCards(), deleteCardPopup.close();
+        card.removeCard();
+        deleteCardPopup.close();
       })
-      .catch((error) => console.error(`Ошибка при удалении карточек ${error}`))
-      .finally();
+      .catch((error) => console.error(`Ошибка при удалении карточек ${error}`));
   }
 );
 
-function newCardCreate(cardData) {
+function createNewCard(cardData) {
   const card = new Card(
     cardData,
     ".cards-template",
@@ -63,14 +63,14 @@ function newCardCreate(cardData) {
         api
           .deleteLike(cardId)
           .then((res) => {
-            card.likesToggle(res.likes);
+            card.toggleLikes(res.likes);
           })
           .catch((error) => console.error(`Ошибка при снятии лайков ${error}`));
       } else {
         api
           .addLike(cardId)
           .then((res) => {
-            card.likesToggle(res.likes);
+            card.toggleLikes(res.likes);
           })
           .catch((error) =>
             console.error(`Ошибка при добавлении лайков ${error}`)
@@ -82,7 +82,7 @@ function newCardCreate(cardData) {
 }
 
 const section = new Section((element) => {
-  section.addItemAppend(newCardCreate(element));
+  section.addItemAppend(createNewCard(element));
 }, cardsContainer);
 
 // popup редактирования профиля
@@ -107,18 +107,19 @@ const popupProfile = new PopupWithForm(profilePopupSelector, (data) => {
     .finally(() => popupProfile.setupTextDefault());
 });
 
-// popup добавление карточек
+// popup popupAddcards
 addButton.addEventListener("click", () => {
   addValidator.resetError();
   popupAddcards.open();
 });
 
-//submit добавление карточек
+//submit popupAddcards
 const popupAddcards = new PopupWithForm(addCardsSelector, (data) => {
-  Promise.all([api.getProfileInfo(), api.addCard(data)])
-    .then(([userData, cardData]) => {
-      cardData.myid = userData._id;
-      section.addItemPrepend(newCardCreate(cardData));
+  api
+    .addCard(data)
+    .then((cardData) => {
+      cardData.myid = userInfo.getId();
+      section.addItemPrepend(createNewCard(cardData));
       popupAddcards.close();
     })
     .catch((error) => console.error(`Ошибка редактирования профиля ${error}`))
@@ -170,6 +171,7 @@ Promise.all([api.getProfileInfo(), api.getCards()])
       job: userData.about,
       avatar: userData.avatar,
     });
+    userInfo.setId(userData._id);
     section.addCards(cardData);
   })
   .catch((error) => console.error(`Ошибка редактирования профиля ${error}`));
