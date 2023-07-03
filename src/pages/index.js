@@ -107,28 +107,28 @@ const popupProfile = new PopupWithForm(profilePopupSelector, (data) => {
     .finally(() => popupProfile.setupTextDefault());
 });
 
-// popup popupAddcards
+// popup popupAddСards
 addButton.addEventListener("click", () => {
-  addValidator.resetError();
-  popupAddcards.open();
+  addValidator.deactivateButton();
+  popupAddCards.open();
 });
 
-//submit popupAddcards
-const popupAddcards = new PopupWithForm(addCardsSelector, (data) => {
+//submit popupAddСards
+const popupAddCards = new PopupWithForm(addCardsSelector, (data) => {
   api
     .addCard(data)
     .then((cardData) => {
       cardData.myid = userInfo.getId();
       section.addItemPrepend(createNewCard(cardData));
-      popupAddcards.close();
+      popupAddCards.close();
     })
     .catch((error) => console.error(`Ошибка редактирования профиля ${error}`))
-    .finally(() => popupAddcards.setupTextDefault());
+    .finally(() => popupAddCards.setupTextDefault());
 });
 
 //Popup аватара
 avatarButton.addEventListener("click", () => {
-  avatarValidation.resetError();
+  avatarValidation.deactivateButton();
   popupAvatarEdit.open();
 });
 
@@ -150,7 +150,7 @@ const popupAvatarEdit = new PopupWithForm(popupAvatarSelector, (data) => {
 
 popupProfile.setEventListeners();
 openImagePopup.setEventListeners();
-popupAddcards.setEventListeners();
+popupAddCards.setEventListeners();
 popupAvatarEdit.setEventListeners();
 deleteCardPopup.setEventListeners();
 
