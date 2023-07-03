@@ -58,8 +58,8 @@ function createNewCard(cardData) {
     ".cards-template",
     openImagePopup.open,
     deleteCardPopup.open,
-    (elementLike, cardId) => {
-      if (elementLike.classList.contains("element__like_active")) {
+    (isLike, cardId) => {
+      if (isLike) {
         api
           .deleteLike(cardId)
           .then((res) => {

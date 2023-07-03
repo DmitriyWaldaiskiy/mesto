@@ -14,6 +14,7 @@ export default class Card {
     this._likes = cardData.likes;
     this._likesLength = cardData.likes.length;
     this._likeChange = likeChange;
+    this._isLike = false;
     this._ownerId = cardData.owner._id;
     this._cardId = cardData._id;
     this._openImage = openImagePopup;
@@ -37,7 +38,7 @@ export default class Card {
   };
 
   _handleLike = () => {
-    this._likeChange(this._likeButton, this._cardId);
+    this._likeChange(this._isLike, this._cardId);
   };
 
   _onOpenImage = () => {
@@ -56,9 +57,10 @@ export default class Card {
       : (this._deleteButton.style.display = "none");
   }
 
-  _checkStatusLike() {
+  checkStatusLike() {
     this._likes.forEach((item) => {
       if (item._id === this._myId) {
+        this._isLike = true;
         this._likeButton.classList.add("element__like_active");
         return;
       }
@@ -69,6 +71,11 @@ export default class Card {
   toggleLikes(likes) {
     this._likeButton.classList.toggle("element__like_active");
     this._counter.textContent = likes.length;
+    if (this._isLike) {
+      this._isLike = false;
+    } else {
+      this._isLike = true;
+    }
   }
 
   removeCard() {
@@ -79,7 +86,7 @@ export default class Card {
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     this._cardName.textContent = this._name;
-    this._checkStatusLike();
+    this.checkStatusLike();
     this._setTrashButtonVisible();
     this._setEventListener();
     return this._cardElement;
